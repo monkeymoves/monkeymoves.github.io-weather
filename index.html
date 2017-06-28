@@ -13,10 +13,13 @@
 </head>
 
 <body>
-    <div class="container-fluid center" > 
+    <div class="container-fluid " > 
+    <div class="well"> 
     <h1>
         <div id="temp"> </div>
         <div id="minutely"> </div>
+        <div id="windspeed"> </div>
+
     </h1>
     <h2>
         <div id="location"> </div>
@@ -24,15 +27,16 @@
     </h2>
     <div> 
    <form action="" id="formradio">
-  <input type="radio" name="gender" value="C" checked> C<br>
-  <input type="radio" name="gender" value="F"> F<br>
+  <input type="radio" onclick="weather();" id="t1" name="temp" value="C" checked> C<br>
+  <input type="radio" onclick="weather();" id="t2" name="temp" value="F"> F<br>
 </form></div>
     
     </div>
+        </div>
 </body>
 <script src="app.js">
 
-
+ 
 </script>
 
 </html>

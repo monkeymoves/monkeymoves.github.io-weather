@@ -13,30 +13,60 @@
 </head>
 
 <body>
-    <div class="container-fluid " > 
+    <div class="container-fluid center " > 
     <div class="well"> 
-    <h1>
-        <div id="temp"> </div>
-        <div id="minutely"> </div>
-        <div id="windspeed"> </div>
+<h1>
+    
+    <div id="minutely"> </div>
+ <canvas id="icon1" width="128" height="128"></canvas>
+    <div> Current Temp</div>
+    <div id="temp"> </div> <br>
 
-    </h1>
+    <div> Windspeed</div>
+    <div id="windspeed"> </div>
+
+   
+
+    
+</h1>
     <h2>
         <div id="location"> </div>
 
     </h2>
+<!--
     <div> 
+        
+        <div class="row"> 
+        <button class="btn-secondary btn" id="t1" onclick="weather();" value="C" checked> Celsius </button>
+        <button class="btn-secondary btn" id="t2" onclick="weather();" value="F"> Farenheit </button>
+        
+        </div>
+-->
+        
    <form action="" id="formradio">
-  <input type="radio" onclick="weather();" id="t1" name="temp" value="C" checked> C<br>
-  <input type="radio" onclick="weather();" id="t2" name="temp" value="F"> F<br>
-</form></div>
+
+           <label for="t1">
+
+  <input type="radio" onclick="weather();" id="t1" name="temp" value="C" checked>Metric C<br>
+       
+                  </label>
+
+  <input type="radio" onclick="weather();" id="t2" name="temp" value="F"> Imperial F<br>
+</form>
+        </div>
+           
     
     </div>
         </div>
 </body>
-<script src="app.js">
+<script src="skycons.js"> </script>
 
+<script src="app.js"> </script>
+   
+    
+    
+    <script>
  
-</script>
+        </script>
 
 </html>

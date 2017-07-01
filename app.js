@@ -31,20 +31,24 @@ function weather() {
         
         
 
-        
-        
-        $.getJSON(url + apiKey + '/' + latitude + "," + longitude + tempunit + "&callback=?", function(data){
-          $('#temp').html(data.currently.temperature + displayunits );
-          $('#minutely').html(data.minutely.summary);
-          $('#windspeed').html(data.currently.windSpeed + displaywind );
+        $.getJSON(url + apiKey + '/' + latitude + "," + longitude + tempunit + "&callback=?", function (data) {
+            $('#temp').html(data.currently.temperature + displayunits);
+            $('#minutely').html(data.minutely.summary);
+            $('#windspeed').html(data.currently.windSpeed + displaywind);
+            $('#weathericon').html(data.currently.icon);
+            var skycons = new Skycons({
+                "color": "white"
+            });
+            // you can add a canvas by it's ID...
+            skycons.add("icon1", data.currently.icon);
+            skycons.play();
 
         });
-        
 
     }
     
     function error(){
-        location.innerHTML = "Sorry unable to find your location";
+        location.innerHTML = "Sorry unable to find your location - if on mobile, turn on GPS";
     }
     
     location.innerHTML = 'Locating...';
@@ -53,4 +57,3 @@ function weather() {
 
 weather();
        
- 

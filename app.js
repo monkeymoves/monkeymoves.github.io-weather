@@ -42,13 +42,37 @@ function weather() {
             // you can add a canvas by it's ID...
             skycons.add("icon1", data.currently.icon);
             skycons.play();
+                
+      switch (displayunits) {
+          case 'F':
+              var temps = [60, 50, 32]
+              break
+          case 'C':
+              temps = [20, 10, 0]
+              break
+      }
+
+    // Array of backgroudn images.
+    var imgs = ['url("landscape1.jpg")', 'url("landscape2.jpg")', 'url("landscape3.jpg")', 'url("landscape4.jpg")']
+    var temp = data.currently.temperature;
+    // Select custom backgroudn image according to temperature range.
+    if (temp >= temps[0]) {
+      $('body').css('background-image', imgs[0])
+    } else if (temp < temps[0] && temp >= temps[1]) {
+      $('body').css('background-image', imgs[1])
+    } else if (temp < temps[1] && temp >= temps[2]) {
+      $('body').css('background-image', imgs[2])
+    } else if (temp < temps[2]) {
+      $('body').css('background-image', imgs[3])
+    } 
 
         });
 
     }
+ 
     
     function error(){
-        location.innerHTML = "Sorry unable to find your location - if on mobile, turn on GPS";
+        location.innerHTML = "Sorry unable to find your location - on mobile, turn on GPS";
     }
     
     location.innerHTML = 'Locating...';

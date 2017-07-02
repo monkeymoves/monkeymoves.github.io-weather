@@ -4,21 +4,27 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/solar/bootstrap.min.css"> 
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
     <link rel="stylesheet" href="style.css" />
-    <title> Weather </title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Bellefair" rel="stylesheet">
+     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    
+    
+    <title> Weather </title>
 
 </head>
 
 <body>
     <div class="container-fluid center " > 
-    <div class="well"> 
+    <div class="well col-xs-12"> 
 <h1>
     
     <div id="minutely"> </div>
- <canvas id="icon1" width="128" height="128"></canvas>
+    <canvas id="icon1" width="128" height="128"></canvas>
     <div> Current Temp</div>
     <div id="temp"> </div> <br>
 
@@ -33,31 +39,37 @@
         <div id="location"> </div>
 
     </h2>
-<!--
-    <div> 
-        
-        <div class="row"> 
-        <button class="btn-secondary btn" id="t1" onclick="weather();" value="C" checked> Celsius </button>
-        <button class="btn-secondary btn" id="t2" onclick="weather();" value="F"> Farenheit </button>
-        
-        </div>
--->
+
+<div class="col-md-2">  
+
+    <h4>Windows</h4>
+    
+    <div class="onoffswitch4">
+    <input type="checkbox" name="onoffswitch4" class="onoffswitch4-checkbox" id="myonoffswitch4" checked>
+    <label class="onoffswitch4-label" for="myonoffswitch4">
+        <span class="onoffswitch4-inner"></span>
+        <span class="onoffswitch4-switch"></span>
+    </label>
+    </div>
+
+</div>
         
    <form action="" id="formradio">
 
-           <label for="t1">
+               
 
-  <input type="radio" onclick="weather();" id="t1" name="temp" value="C" checked>Metric C<br>
+  <input type="radio" onclick="weather();" id="t1" name="temp" value="C" checked> <h1>Metric C </h1> <br>
        
-                  </label>
+                 
 
-  <input type="radio" onclick="weather();" id="t2" name="temp" value="F"> Imperial F<br>
+  <input type="radio" onclick="weather();" id="t2" name="temp" value="F"> <h1> Imperial F </h1> <br>
+       
+       
 </form>
-        </div>
            
     
-    </div>
-        </div>
+    
+        
 </body>
 <script src="skycons.js"> </script>
 

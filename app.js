@@ -1,25 +1,44 @@
+function weather2(unit, a, b) {
+//    alert(unit);
+    tempunit = unit;
+    displayunits = a;
+    displaywind = b;
+    weather(unit);
+};
+
+var tempunit = '?units=si';
+var displayunits = '';
+var displaywind ='';
+
 function weather() {
     
     var location = document.getElementById("location");
     var apiKey = '5ad405dbaeaf4aef286618e4a5558716';
     var url = 'https://api.forecast.io/forecast/';
-    var tempunit = '';
-    var displayunits = 'F';
-    var displaywind ='';
-    
    
-    if(document.getElementById('t1').checked) {
-        displaywind = 'MPH';
+    
+   if (tempunit == '?units=si'){
+       tempunit = '?units=si';
+       displayunits = 'C';
+       displaywind = 'MPH';
+   } else {
+       tempunit = tempunit;
+       displayunits = 'F';
+       displaywind = 'KPH';
+   }
         
-    } else displaywind ='KPH';
-     
-    
-    
-    
-    if(document.getElementById('t1').checked) {
-        tempunit = '?units=si';
-        displayunits = 'C';
-    } else tempunit ='?units=us';
+//    if(document.getElementById('t1').checked) {
+//        displaywind = 'MPH';
+//        
+//    } else displaywind ='KPH';
+//     
+//    
+//    
+//    
+//    if(document.getElementById('t1').checked) {
+//        tempunit = '?units=si';
+//        displayunits = 'C';
+//    } else tempunit ='?units=us';
     
     navigator.geolocation.getCurrentPosition(sucess, error); 
     
@@ -45,7 +64,7 @@ function weather() {
                 
       switch (displayunits) {
           case 'F':
-              var temps = [60, 50, 32]
+              var temps = [70, 50, 32]
               break
           case 'C':
               temps = [20, 10, 0]
@@ -53,7 +72,7 @@ function weather() {
       }
 
     // Array of backgroudn images.
-    var imgs = ['url("landscape1.jpg")', 'url("landscape2.jpg")', 'url("landscape3.jpg")', 'url("landscape4.jpg")']
+    var imgs = ['url("landscape1.jpg")', 'url("landscape2.jpg")', 'url("landscape2.jpg")', 'url("landscape2.jpg")']
     var temp = data.currently.temperature;
     // Select custom backgroudn image according to temperature range.
     if (temp >= temps[0]) {
